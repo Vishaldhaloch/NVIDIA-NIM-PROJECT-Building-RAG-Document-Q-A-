@@ -56,7 +56,8 @@ This project demonstrates how to build a **Retrieval-Augmented Generation (RAG) 
    ```bash
    git clone <repository_url>
    cd <repository_folder>
-   2. **Create a Conda Environment:**
+   
+2. **Create a Conda Environment:**
     ```bash
    conda create -n nvidia-rag python=3.8 -y
    
