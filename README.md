@@ -56,3 +56,45 @@ This project demonstrates how to build a **Retrieval-Augmented Generation (RAG) 
    ```bash
    git clone <repository_url>
    cd <repository_folder>
+   2. **Create a Conda Environment:**
+    ```bash
+   conda create -n nvidia-rag python=3.8 -y
+   
+3. **Activate the Environment:**
+    ```bash
+    conda activate nvidia-rag
+  
+4. **Install Dependencies:**
+   Install the required libraries using requirements.txt:
+    ```bash 
+    pip install -r requirements.txt
+   
+5. **Set Up Environment Variables:**
+   Create a .env file in the project root with the following content:
+    ```bash
+    NVIDIA_API_KEY=your_nvidia_api_key
+
+  
+1. **How to Run**
+   Start the task execution by running the following Python script:
+     ```bash
+     streamlit run app.py
+   
+2. **Enter Your Query:**
+    - In the Streamlit app, type your query (e.g., "What is the 2020 U.S. census data?") in the text box and click the "Document Embedding" button to prepare the document embeddings.
+
+3. **View the Results:**
+    - The system will generate an answer based on the documents available in the database, showing related document chunks in the "Document Similarity Search" section.
+    - 
+**Code Overview**
+ **NVIDIA LLM Integration::**
+   - The ChatNVIDIA class from Langchain is used to interface with Nvidia's LLM. It processes the user input, integrates the retrieved document chunks, and produces an answer.
+
+**Document Ingestion & Embedding:**
+ - The PyPDFDirectoryLoader loads documents, which are then split into chunks using the RecursiveCharacterTextSplitter. These chunks are transformed into 
+   embeddings and stored in FAISS for efficient retrieval.
+
+**Q&A Logic:**
+ - When a user query is entered, the app triggers the vector_embedding() function to load and embed documents. The relevant documents are then retrieved using the 
+   FAISS vector store and passed into the model to generate an answer.
+
