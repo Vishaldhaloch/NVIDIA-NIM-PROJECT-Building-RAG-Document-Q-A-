@@ -81,14 +81,17 @@ This project demonstrates how to build a **Retrieval-Augmented Generation (RAG) 
      streamlit run app.py
    
 2. **Enter Your Query:**
-    - In the Streamlit app, type your query (e.g., "What is the 2020 U.S. census data?") in the text box and click the "Document Embedding" button to prepare the document embeddings.
+    - In the Streamlit app, type your query (e.g., "What is the 2020 U.S. census data?") in the text box and click the "Document Embedding" button to prepare the 
+    document embeddings.
 
 3. **View the Results:**
-    - The system will generate an answer based on the documents available in the database, showing related document chunks in the "Document Similarity Search" section.
+    - The system will generate an answer based on the documents available in the database, showing related document chunks in the "Document Similarity Search" 
+   section.
     - 
 **Code Overview**
  **NVIDIA LLM Integration::**
-   - The ChatNVIDIA class from Langchain is used to interface with Nvidia's LLM. It processes the user input, integrates the retrieved document chunks, and produces an answer.
+   - The ChatNVIDIA class from Langchain is used to interface with Nvidia's LLM. It processes the user input, integrates the retrieved document chunks, and 
+   produces an answer.
 
 **Document Ingestion & Embedding:**
  - The PyPDFDirectoryLoader loads documents, which are then split into chunks using the RecursiveCharacterTextSplitter. These chunks are transformed into 
